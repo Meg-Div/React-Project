@@ -1,10 +1,8 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,ts}"],
+  content: ["./src/**/*.{html,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        // Configure your color palette here
         transparent: "transparent",
         current: "currentColor",
         wheat: "#f7cfbe",

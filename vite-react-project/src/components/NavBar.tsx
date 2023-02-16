@@ -2,22 +2,31 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
+import * as BsIcons from "react-icons/bs"
 import { SidebarData } from './SidebarData'
 import { IconContext } from 'react-icons'
 
 export const NavBar = () => {
   const [open, setOpen] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar)
-
   return (
     <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+      <div className="md:flex items-center justify-between bg-white py-4 md:px-6 px-7">
         <div className='font-bold text-2xl cursor-point flex items-center text-gray-800'>
-          <span className='text-3xl text-indigo-600 mr-1 pt-2'>
-            <FaIcons.FaPaintRoller/>
-          </span>
-          Designer
+
+          <form action="" className="relative w-max mx-auto" >
+
+            <input type="search" name="search" id="search" className='  relative peer z-10 bg-transparent w-12 h-12 rounded-full border curser-pointer outline-none pl-12 focus:w-2/3 focus:border-gull focus:cursor-text focus:pl-16 focus:pr-4 ' />
+
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 px-3 stroke-gray-500  border-r border-transparent peer-focus:stroke-wheat" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+              
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+
+            </svg>
+
+
+          </form>
+
         </div>
 
         <div onClick={()=> setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
@@ -28,9 +37,8 @@ export const NavBar = () => {
         {SidebarData.map((item, index)=> {
               return (
                 <li key={index} className="md:ml-8 text-xl md:my-0 my-7">
-                <Link to={item.path} className="text-green-500 hover:text-blue-800 duration-500">
-                  {item.icon}
-                  <span>{item.title}</span>
+                <Link to={item.path} className="text-gull hover:text-blue-800 duration-500">
+                  <span className="inline-block content-center gap-2"> {item.icon} {item.title}</span>
                 </Link>
               </li>
               )
