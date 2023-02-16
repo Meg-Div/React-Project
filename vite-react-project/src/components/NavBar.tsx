@@ -13,13 +13,13 @@ export const NavBar = () => {
   return (
     <>
     <IconContext.Provider value={{color: "#234e59"}}>
-      <div className="shadow-md w-full fixed top-0 left-0">
+      <div className="navbar">
         <Link to="#" className="menu-bars">
         <FaIcons.FaBars onClick={showSidebar} />
         </Link>
         </div>  
-        <nav className={sidebar ? "md:flex bg-white py-4" : "nav-menu"}>
-          <ul className="nav-menu-items" onClick={showSidebar}>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items">
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
                 <AiIcons.AiOutlineClose />
