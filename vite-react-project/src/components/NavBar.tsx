@@ -38,7 +38,8 @@ export const NavBar = () => {
               return (
                 <li key={index} className="md:ml-8 text-xl md:my-0 my-7">
                 <Link to={item.path} className="text-gull hover:text-blue-800 duration-500">
-                  <span className="inline-block content-center gap-2"> {item.icon} {item.title}</span>
+                  <span className="inline-block content-center gap-2"> 
+                  {open ? item.title : item.icon} </span>
                 </Link>
               </li>
               )
