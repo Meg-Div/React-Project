@@ -8,6 +8,7 @@ export const HomePage = () => {
     <div>
         <NavBar />
         HomePage</div>
+        <h1>hello</h1>
     </Link>
     //codew
   )
