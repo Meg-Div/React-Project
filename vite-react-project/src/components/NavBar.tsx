@@ -16,14 +16,13 @@ export const NavBar = () => {
 
           <form action="" className="relative w-max mx-auto" >
 
-            <input type="search" name="search" id="search" className='  relative peer z-10 bg-transparent w-12 h-12 rounded-full border curser-pointer outline-none pl-12 focus:w-2/3 focus:border-gull focus:cursor-text focus:pl-16 focus:pr-4 ' />
+            <input type="search" name="search" id="search" className='  relative peer z-10 bg-transparent w-12 h-12 rounded-full border curser-pointer outline-none pl-12 focus:w-2/3 focus:border-gull focus:cursor-text focus:pl-16 focus:pr-4' />
 
-            <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 px-3 stroke-gray-500  border-r border-transparent peer-focus:stroke-wheat" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 px-3 stroke-gull  border-r border-transparent peer-focus:stroke-gull" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
               
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 
             </svg>
-
 
           </form>
 
@@ -33,11 +32,11 @@ export const NavBar = () => {
             {open ? <AiIcons.AiOutlineClose /> : <FaIcons.FaBars />}
         </div>
 
-        <ul className={open ? 'md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto  md:pl-0 pl-9 transition-all duration-500 ease-in top-20 opacity-100 md:opacity-100' : 'md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto  md:pl-0 pl-9 transition-all duration-500 ease-in top-[-490px]'}>
+        <ul className={open ? 'md:flex md:items-center md:pb-0 pb-12 md:static bg-white md:z-auto z-[8] left-0 w-full md:w-auto  md:pl-0 pl-9 transition-all duration-500 ease-in top-20 opacity-100 md:opacity-100' : 'md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[8] left-0 w-full md:w-auto  md:pl-0 pl-9 transition-all duration-500 ease-in top-[-490px]'}>
         {SidebarData.map((item, index)=> {
               return (
                 <li key={index} className="md:ml-8 text-xl md:my-0 my-7">
-                <Link to={item.path} className="text-gull hover:text-blue-800 duration-500">
+                <Link to={item.path} className="text-gull hover:text-summer duration-500">
                   <span className="inline-block content-center gap-2"> 
                   {open ? item.title : item.icon} </span>
                 </Link>
