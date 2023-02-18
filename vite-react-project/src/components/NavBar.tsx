@@ -2,12 +2,20 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
-import * as BsIcons from "react-icons/bs"
 import { SidebarData } from './SidebarData'
 import { IconContext } from 'react-icons'
+import { useAppDispatch, useAppSelector } from '../state/Hooks'
+import { setArt } from '../state/ArtSlice'
+import { imageData } from './DalleData'
+import { useDispatch } from 'react-redux'
+import { setOpen } from '../state/ArtSlice'
 
 export const NavBar = () => {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const open = useAppSelector(s => s.art.open)
+  const artSearch = useAppSelector(s => s.art.artSearch)
+
 
   return (
     <div className="shadow-md w-full fixed top-0 left-0">
@@ -16,19 +24,18 @@ export const NavBar = () => {
 
           <form action="" className="relative w-max mx-auto" >
 
-            <input type="search" name="search" id="search" className='  relative peer z-10 bg-transparent w-12 h-12 rounded-full border curser-pointer outline-none pl-12 focus:w-2/3 focus:border-gull focus:cursor-text focus:pl-16 focus:pr-4' />
+            <input type="search" name="search" autoComplete="off" id="search" className='  relative peer z-10 bg-transparent w-12 h-12 rounded-full border curser-pointer outline-none pl-12 focus:w-2/3 focus:border-gull focus:cursor-text focus:pl-16 focus:pr-4' onChange={(e) => dispatch(setArt(e.target.value))} value={artSearch}/>
 
             <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 px-3 stroke-gull  border-r border-transparent peer-focus:stroke-gull" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
               
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 
             </svg>
-
+    
           </form>
 
         </div>
-
-        <div onClick={()=> setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+        <div onClick={()=> dispatch(setOpen(!open))} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
             {open ? <AiIcons.AiOutlineClose /> : <FaIcons.FaBars />}
         </div>
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavBar } from '../NavBar'
 
-export const Artists = () => {
+export const Cart = () => {
   return (
     <NavBar />
   )
