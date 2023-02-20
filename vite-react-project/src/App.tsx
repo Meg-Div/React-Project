@@ -1,23 +1,23 @@
-import reactLogo from './assets/react.svg'
 import './App.css'
 import { useAppDispatch, useAppSelector } from './state/Hooks'
 import { increment } from './state/CounterSlice'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { HomePage } from './components/pages/HomePage'
-import { NavBar } from './components/NavBar'
+import { Home } from './components/pages/Home'
 import { Cart } from './components/pages/Cart'
 import { Picks } from './components/pages/Picks'
-import { Collections } from './components/pages/Collections'
+import { Collection } from './components/pages/Collection'
+import Error from './components/pages/Error'
 
 function App() {
   return (
     <>
     <Routes>
       <Route path="/" element={<Counter/>} />
-      <Route path="/home" element={<HomePage />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/picks" element={<Picks />} />
-      <Route path="/collections" element={<Collections />} />
+      <Route path="/collection" element={<Collection />} />
+      <Route path="*" element={<Error />} />
     </Routes>
     </>
   )
