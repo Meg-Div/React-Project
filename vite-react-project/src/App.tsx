@@ -6,6 +6,9 @@ import { Home } from './components/pages/Home'
 import { Cart } from './components/pages/Cart'
 import { Picks } from './components/pages/Picks'
 import { Collection } from './components/pages/Collection'
+import { SecondHome } from './components/pages/SecondHome'
+import { ProductDetails } from './components/content/ProductDetails'
+
 import Error from './components/pages/Error'
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/picks" element={<Picks />} />
       <Route path="/collection" element={<Collection />} />
+      <Route path="/second" element={<SecondHome />} />
+      <Route path="/:id" element={<ProductDetails />} />
+
       <Route path="*" element={<Error />} />
     </Routes>
     </>

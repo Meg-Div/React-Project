@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { imageData } from "../components/data/DalleData";
 import { pickData } from "../components/data/PicksData";
-import { SidebarData } from "../components/data/SidebarData";
 
 interface CartItem {
   id: number,
