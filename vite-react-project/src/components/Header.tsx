@@ -20,18 +20,31 @@ export function Header(): JSX.Element {
       {/* Logo */}
       <div className="container mx-auto flex items-center justify-between h-full">
         <Link to={"/"}>
-          <div>
-            <img className="w-[40px]" src="/Logo.png" alt="" />
+          <div
+            id="noto"
+            className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-summer to-wheat md:pl-2 pl-2"
+          >
+            Dalle
           </div>
         </Link>
-        {/* Cart */}
-        <div
-          className="cursor-pointer flex relative right-2 "
-          onClick={() => dispatch(setOpen(!open))}
-        >
-          <BsIcons.BsFillHandbagFill className="text-3xl" />
-          <div className="bg-red-500 absolute -right-1 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
-            {amountTotal}
+
+        <div className="flex justify-items-center w-[50px] md:w-[30px] gap-2 pt-2">
+          <div className="cursor-pointer flex relative right-12  hover:text-summer">
+            <Link to={"/collection"}>
+              <BsIcons.BsCollectionFill className="text-3xl" />
+            </Link>
+          </div>
+
+          {/* Cart */}
+
+          <div
+            className="cursor-pointer flex relative right-10  hover:text-summer "
+            onClick={() => dispatch(setOpen(!open))}
+          >
+            <BsIcons.BsFillHandbagFill className="text-3xl" />
+            <div className="bg-summer absolute -right-1 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
+              {amountTotal}
+            </div>
           </div>
         </div>
       </div>

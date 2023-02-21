@@ -10,7 +10,7 @@ export function FrontPageImage(): JSX.Element {
           alt=""
         />
         <div className="z-[2] absolute top-1/2 left-1/2 transform -translate-x-1/20 gap-5 -translate-y-1/20  text-black text-6xl font-bold text-center md:inset-y-0 md:right-0 md:top-20 md:left-30 md:-translate-x-0 md:-translate-y-0">
-          <div className="text-xl">New Works</div>
+          <div className="text-xl pt-10 mt-10">New Works</div>
           Dalle
         </div>
       </div>
