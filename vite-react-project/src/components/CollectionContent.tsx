@@ -10,15 +10,16 @@ interface CartItem {
   id: number;
   title: string;
   src: string;
-  price: string;
+  price: number;
+  amount: number;
 }
 
-export const ProductContent = ({ id, title, src, price }: CartItem) => {
+export const ProductContent = ({ id, title, src, price, amount }: CartItem) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div>
-      <div className="border-8 border-[#c3bbb6] h-[250px] w-[250px] mb-4 relative overflow-hidden group transition">
+    <div className="">
+      <div className="border-8 border-[#c3bbb6] h-[250px] w-[250px] mb-4 relative overflow-hidden group transition ">
         <div className="w-full h-full flex justify-center items-center">
           {/*image*/}
           <div className="w-[200px] mx-auto flex justify-center items-center">
@@ -35,7 +36,9 @@ export const ProductContent = ({ id, title, src, price }: CartItem) => {
             <div className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull">
               <BsIcons.BsBagPlusFill
                 className="text-2xl"
-                onClick={(e) => dispatch(addCart({ id, title, src, price }))}
+                onClick={(e) =>
+                  dispatch(addCart({ id, title, src, price, amount }))
+                }
               />
             </div>
           </button>
@@ -43,7 +46,9 @@ export const ProductContent = ({ id, title, src, price }: CartItem) => {
             <div className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull">
               <BsIcons.BsBagDashFill
                 className="text-2xl"
-                onClick={(e) => dispatch(removeCart({ id, title, src, price }))}
+                onClick={(e) =>
+                  dispatch(removeCart({ id, title, src, price, amount }))
+                }
               />
             </div>
           </button>
@@ -63,7 +68,7 @@ export const ProductContent = ({ id, title, src, price }: CartItem) => {
           </div>
         </Link>
         <div className="text-sm capitalize text-everglade mb-1 font-bold ml-1">
-          {price}
+          ${price}
         </div>
       </div>
     </div>

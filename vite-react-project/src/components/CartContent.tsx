@@ -1,18 +1,19 @@
 import React from "react";
 import { useAppSelector, useAppDispatch } from "../state/Hooks";
 import { Link } from "react-router-dom";
-import { addCart, removeCart } from "../state/ArtSlice";
-import * as BsIcons from "react-icons/bs";
+import { addCart, removeCart, removeItem } from "../state/ArtSlice";
 import * as AiIcons from "react-icons/ai";
+import * as IoIcons from "react-icons/io";
 
 interface CartItem {
   id: number;
   title: string;
   src: string;
-  price: string;
+  price: number;
+  amount: number;
 }
 
-export const CartContent = ({ id, title, src, price }: CartItem) => {
+export const CartContent = ({ id, title, src, price, amount }: CartItem) => {
   const dispatch = useAppDispatch();
 
   return (
@@ -39,8 +40,44 @@ export const CartContent = ({ id, title, src, price }: CartItem) => {
             <div className="text-xl cursor-pointer">
               <AiIcons.AiOutlineClose
                 className="text-gull hover:text-rose-600 transition mt-1 "
-                onClick={(e) => dispatch(removeCart({ id, title, src, price }))}
+                onClick={(e) =>
+                  dispatch(removeCart({ id, title, src, price, amount }))
+                }
               />
+            </div>
+          </div>
+          <div className=" flex gap-x-2 h-[36px] text-sm">
+            {/* quantity */}
+
+            <div className="flex flex-1 max-w-[100px] items-center h-full border text-everglade font-medium">
+              {/* minus icon */}
+              <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
+                <IoIcons.IoIosRemoveCircle
+                  onClick={(e) =>
+                    dispatch(removeItem({ id, title, src, price, amount }))
+                  }
+                />
+              </div>
+
+              {/*amount */}
+              <div className="h-full flex justify-center items-center px-2">
+                {amount}
+              </div>
+
+              {/* plus icon */}
+              <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
+                <IoIcons.IoIosAddCircle
+                  onClick={(e) =>
+                    dispatch(addCart({ id, title, src, price, amount }))
+                  }
+                />
+              </div>
+            </div>
+            {/* item price */}
+            <div>${price}.00</div>
+            {/* final price */}
+            <div className="flex-1 flex justify-end">
+              {`${price * amount}`}.00{" "}
             </div>
           </div>
         </div>

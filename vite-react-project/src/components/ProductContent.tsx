@@ -9,10 +9,10 @@ export const ProductContent = () => {
   //grab id and search data for matching object
   const ID = Number(useParams().id);
   const imageData = useAppSelector((state) => state.art.imageData);
-  const dalle = imageData.find((elem) => elem.id === ID);
+  const found = imageData.find((elem) => elem.id === ID);
 
   //if page not found
-  if (dalle === undefined) {
+  if (found === undefined) {
     return <Error />;
   }
 

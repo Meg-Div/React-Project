@@ -5,7 +5,8 @@ interface CartItem {
   id: number;
   title: string;
   src: string;
-  price: string;
+  price: number;
+  amount: number;
 }
 
 type SliceState = {
@@ -35,13 +36,33 @@ export const artSlice = createSlice({
       state.open = action.payload;
     },
     addCart: (state, action: PayloadAction<CartItem>) => {
-      state.cart.push(action.payload);
+      //if already exists in cart, add to amount
+      const found = state.cart.find((elem) => elem.id === action.payload.id);
+      if (found != undefined) {
+        found.amount++;
+      } else {
+        state.cart.push(action.payload);
+      }
     },
     removeCart: (state, action: PayloadAction<CartItem>) => {
       state.cart = state.cart.filter((elem) => elem.id != action.payload.id);
     },
+    removeItem: (state, action: PayloadAction<CartItem>) => {
+      //if exists in cart, remove from amount
+      const found = state.cart.find((elem) => elem.id === action.payload.id);
+      if (found != undefined) {
+        if (found.amount > 1) {
+          found.amount--;
+        } else {
+          state.cart = state.cart.filter(
+            (elem) => elem.id != action.payload.id
+          );
+        }
+      }
+    },
   },
 });
-export const { setArt, setOpen, addCart, removeCart } = artSlice.actions;
+export const { setArt, setOpen, addCart, removeCart, removeItem } =
+  artSlice.actions;
 
 export default artSlice.reducer;
