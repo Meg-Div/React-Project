@@ -30,7 +30,7 @@ export function Sidebar(): JSX.Element {
   md:w[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4
   lg:px-[35px]"
       >
-        <div className="flex items-center justify-between py-6 border-b">
+        <div className=" flex items-center justify-between py-6 border-b">
           <div className="text-md font-semibold ">CART {amountTotal}</div>
 
           {/* close button*/}
@@ -41,12 +41,12 @@ export function Sidebar(): JSX.Element {
             <AiIcons.AiFillCloseCircle className="text-2xl" />
           </button>
         </div>
-        <div>
+        <div className="bg-pink-200 flex flex-col gap-y-2 h-[520px] lg:h-[500px] overflow-y-auto overflow-x-hidden border-b">
           {cart.map((item) => {
             return <CartContent {...item} />;
           })}
         </div>
-        <div className="bg-pink-200 flex flex-col gap-y-3 py-4 mt-4">
+        <div className="flex flex-col gap-y-3 py-4 mt-4">
           <div className="flex w-full justify-between items-center">
             {/* total */}
             <div className="uppercase font-semibold ">

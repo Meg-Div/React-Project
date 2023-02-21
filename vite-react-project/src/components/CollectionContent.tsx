@@ -15,7 +15,7 @@ export function ProductContent({
   const dispatch = useAppDispatch();
 
   return (
-    <div className="">
+    <div className="pt-10">
       <div className="border-8 border-[#c3bbb6] h-[250px] w-[250px] mb-4 relative overflow-hidden group transition ">
         <div className="w-full h-full flex justify-center items-center">
           {/*image*/}

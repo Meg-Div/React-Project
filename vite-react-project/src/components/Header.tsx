@@ -16,7 +16,7 @@ export function Header(): JSX.Element {
   }
 
   return (
-    <div className="bg-pink-300">
+    <div className="bg-white py-6 shadow-md fixed w-full z-10 transition-all p-1">
       {/* Logo */}
       <div className="container mx-auto flex items-center justify-between h-full">
         <Link to={"/"}>
@@ -26,11 +26,11 @@ export function Header(): JSX.Element {
         </Link>
         {/* Cart */}
         <div
-          className="cursor-pointer flex relative "
+          className="cursor-pointer flex relative right-2 "
           onClick={() => dispatch(setOpen(!open))}
         >
-          <BsIcons.BsFillHandbagFill className="text-2xl" />
-          <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
+          <BsIcons.BsFillHandbagFill className="text-3xl" />
+          <div className="bg-red-500 absolute -right-1 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
             {amountTotal}
           </div>
         </div>
