@@ -1,5 +1,3 @@
-//placeholder for specific product information
-
 import React from "react";
 import { useAppSelector, useAppDispatch } from "../state/Hooks";
 import { useParams } from "react-router-dom";

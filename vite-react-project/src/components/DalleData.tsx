@@ -1,10 +1,4 @@
-interface CartItem {
-  id: number;
-  title: string;
-  src: string;
-  price: number;
-  amount: number;
-}
+import { CartItem } from "../state/ArtSlice";
 
 export const imageData: CartItem[] = [
   {

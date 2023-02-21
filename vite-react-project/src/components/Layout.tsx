@@ -1,10 +1,7 @@
 import React from "react";
 import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
-
-interface LayoutProps {
-  children: React.ReactNode;
-}
+import { LayoutProps } from "../state/ArtSlice";
 
 export function Layout({ children }: LayoutProps) {
   return (

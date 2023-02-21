@@ -1,18 +1,9 @@
 import * as BsIcons from "react-icons/bs";
-import * as AiIcons from "react-icons/ai";
 import * as CgIcons from "react-icons/cg";
-import { addCart, removeCart } from "../state/ArtSlice";
+import { addCart, removeItem } from "../state/ArtSlice";
 import { useAppDispatch } from "../state/Hooks";
-import { NavBar } from "./content/NavBar";
 import { Link } from "react-router-dom";
-
-interface CartItem {
-  id: number;
-  title: string;
-  src: string;
-  price: number;
-  amount: number;
-}
+import { CartItem } from "../state/ArtSlice";
 
 export const ProductContent = ({ id, title, src, price, amount }: CartItem) => {
   const dispatch = useAppDispatch();
@@ -33,23 +24,23 @@ export const ProductContent = ({ id, title, src, price, amount }: CartItem) => {
         {/* buttons */}
         <div className="absolute top-6 -right-11 group-hover:right-5 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button>
-            <div className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull">
-              <BsIcons.BsBagPlusFill
-                className="text-2xl"
-                onClick={(e) =>
-                  dispatch(addCart({ id, title, src, price, amount }))
-                }
-              />
+            <div
+              className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull"
+              onClick={(e) =>
+                dispatch(addCart({ id, title, src, price, amount }))
+              }
+            >
+              <BsIcons.BsBagPlusFill className="text-2xl" />
             </div>
           </button>
           <button>
-            <div className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull">
-              <BsIcons.BsBagDashFill
-                className="text-2xl"
-                onClick={(e) =>
-                  dispatch(removeCart({ id, title, src, price, amount }))
-                }
-              />
+            <div
+              className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull"
+              onClick={(e) =>
+                dispatch(removeItem({ id, title, src, price, amount }))
+              }
+            >
+              <BsIcons.BsBagDashFill className="text-2xl" />
             </div>
           </button>
           <Link

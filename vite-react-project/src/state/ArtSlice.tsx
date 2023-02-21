@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { imageData } from "../components/data/DalleData";
+import { imageData } from "../components/DalleData";
 
-interface CartItem {
+export interface CartItem {
   id: number;
   title: string;
   src: string;
@@ -9,15 +9,17 @@ interface CartItem {
   amount: number;
 }
 
+export interface LayoutProps {
+  children: React.ReactNode;
+}
+
 type SliceState = {
-  artSearch: string;
   open: boolean;
   cart: Array<CartItem>;
   imageData: Array<CartItem>;
 };
 
 const initialState: SliceState = {
-  artSearch: "",
   open: false,
   cart: [],
   imageData: imageData,
@@ -29,9 +31,6 @@ export const artSlice = createSlice({
   initialState,
   reducers: {
     //PayloadAction<string> action typing for Typescript
-    setArt: (state, action: PayloadAction<string>) => {
-      state.artSearch = action.payload;
-    },
     setOpen: (state, action: PayloadAction<boolean>) => {
       state.open = action.payload;
     },
@@ -44,7 +43,12 @@ export const artSlice = createSlice({
         state.cart.push(action.payload);
       }
     },
+    clearCart: (state) => {
+      //revert to empty
+      state.cart = [];
+    },
     removeCart: (state, action: PayloadAction<CartItem>) => {
+      //filter out items from cart
       state.cart = state.cart.filter((elem) => elem.id != action.payload.id);
     },
     removeItem: (state, action: PayloadAction<CartItem>) => {
@@ -62,7 +66,7 @@ export const artSlice = createSlice({
     },
   },
 });
-export const { setArt, setOpen, addCart, removeCart, removeItem } =
+export const { setOpen, addCart, removeCart, removeItem, clearCart } =
   artSlice.actions;
 
 export default artSlice.reducer;

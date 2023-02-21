@@ -3,18 +3,24 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../state/Hooks";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as BsIcons from "react-icons/bs";
-import { ProductContent } from "./CollectionContent";
-import { setOpen } from "../state/ArtSlice";
+import { setOpen, clearCart } from "../state/ArtSlice";
 import { CartContent } from "./CartContent";
 
 export const Sidebar = () => {
   const dispatch = useAppDispatch();
+
   const cart = useAppSelector((state) => state.art.cart);
   const open = useAppSelector((state) => state.art.open);
 
   if (!open) {
     return null;
+  }
+  let finalTotal = 0;
+  let amountTotal = 0;
+
+  for (let elem of cart) {
+    finalTotal += elem.amount * elem.price;
+    amountTotal += elem.amount;
   }
 
   return (
@@ -25,7 +31,7 @@ export const Sidebar = () => {
   lg:px-[35px]"
       >
         <div className="flex items-center justify-between py-6 border-b">
-          <div className="text-md font-semibold ">CART (0)</div>
+          <div className="text-md font-semibold ">CART {amountTotal}</div>
 
           {/* close button*/}
           <button
@@ -35,10 +41,27 @@ export const Sidebar = () => {
             <AiIcons.AiFillCloseCircle className="text-2xl" />
           </button>
         </div>
-        <div>cart items</div>
-        {cart.map((item) => {
-          return <CartContent {...item} />;
-        })}
+        <div>
+          cart items
+          {cart.map((item) => {
+            return <CartContent {...item} />;
+          })}
+        </div>
+        <div className="bg-pink-200 flex flex-col gap-y-3 py-4 mt-4">
+          <div className="flex w-full justify-between items-center">
+            {/* total */}
+            <div className="uppercase font-semibold ">
+              <span>Total: </span>${finalTotal}
+            </div>
+            {/*clear cart icon */}
+            <div
+              className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl"
+              onClick={() => dispatch(clearCart())}
+            >
+              <FaIcons.FaTrashAlt />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
