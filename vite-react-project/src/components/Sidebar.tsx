@@ -36,7 +36,9 @@ export function Sidebar(): JSX.Element {
           {/* close button*/}
           <button
             className="curse-pointer w-8 h-8 flex justify-center items-center"
-            onClick={() => dispatch(setOpen(!open))}
+            onClick={(event: React.MouseEvent<HTMLElement>) =>
+              dispatch(setOpen(!open))
+            }
           >
             <AiIcons.AiFillCloseCircle className="text-2xl" />
           </button>
@@ -55,7 +57,9 @@ export function Sidebar(): JSX.Element {
             {/*clear cart icon */}
             <div
               className="cursor-pointer py-4 bg-white text-black w-10 h-10 flex justify-center items-center text-xl"
-              onClick={() => dispatch(clearCart())}
+              onClick={(event: React.MouseEvent<HTMLElement>) =>
+                dispatch(clearCart())
+              }
             >
               <FaIcons.FaTrash />
             </div>

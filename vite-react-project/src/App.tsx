@@ -5,8 +5,9 @@ import { Layout } from "./components/Layout";
 import { SecondHome } from "./components/SecondHome";
 import { FrontPageImage } from "./components/FrontPageImage";
 import { Product } from "./components/Product";
+import { ReactElement } from "react";
 
-function App() {
+function App(): ReactElement {
   return (
     <>
       <Routes>

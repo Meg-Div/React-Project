@@ -32,7 +32,7 @@ export function CollectionContent({
           <button>
             <div
               className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull"
-              onClick={(e) =>
+              onClick={(event: React.MouseEvent<HTMLElement>) =>
                 dispatch(addCart({ id, title, src, price, amount }))
               }
             >
@@ -42,7 +42,7 @@ export function CollectionContent({
           <button>
             <div
               className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull"
-              onClick={(e) =>
+              onClick={(event: React.MouseEvent<HTMLElement>) =>
                 dispatch(removeItem({ id, title, src, price, amount }))
               }
             >
@@ -50,7 +50,7 @@ export function CollectionContent({
             </div>
           </button>
           <div
-            onClick={(e) =>
+            onClick={(event: React.MouseEvent<HTMLElement>) =>
               dispatch(checkProduct({ id, title, src, price, amount }))
             }
           >

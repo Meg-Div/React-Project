@@ -39,7 +39,9 @@ export function Header(): JSX.Element {
 
           <div
             className="cursor-pointer flex relative right-10  hover:text-summer "
-            onClick={() => dispatch(setOpen(!open))}
+            onClick={(event: React.MouseEvent<HTMLElement>) =>
+              dispatch(setOpen(!open))
+            }
           >
             <BsIcons.BsFillHandbagFill className="text-3xl" />
             <div className="bg-summer absolute -right-1 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">

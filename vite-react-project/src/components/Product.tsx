@@ -36,7 +36,7 @@ export function Product(): JSX.Element {
               </div>
               <button
                 className="bg-summer py-4 px-8 rounded-full text-white"
-                onClick={(e) =>
+                onClick={(event: React.MouseEvent<HTMLElement>) =>
                   dispatch(addCart({ id, title, src, price, amount }))
                 }
               >
