@@ -4,7 +4,7 @@ import { Error } from "./components/Error";
 import { Layout } from "./components/Layout";
 import { SecondHome } from "./components/SecondHome";
 import { FrontPageImage } from "./components/FrontPageImage";
-import { ProductContent } from "./components/ProductContent";
+import { Product } from "./components/Product";
 
 function App() {
   return (
@@ -30,27 +30,13 @@ function App() {
           path="/collection/:id"
           element={
             <Layout>
-              <ProductContent />
-            </Layout>
-          }
-        />
-        <Route
-          path="/second"
-          element={
-            <Layout>
-              <SecondHome />
+              <Product />
             </Layout>
           }
         />
 
-        <Route
-          path="*"
-          element={
-            <Layout>
-              <Error />
-            </Layout>
-          }
-        />
+        <Route path="*" element={<Error />} />
+        <Route path="/collection/*" element={<Error />} />
       </Routes>
     </>
   );

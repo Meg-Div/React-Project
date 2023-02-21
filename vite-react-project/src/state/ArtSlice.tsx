@@ -17,12 +17,14 @@ type SliceState = {
   open: boolean;
   cart: Array<CartItem>;
   imageData: Array<CartItem>;
+  product: Array<CartItem>;
 };
 
 const initialState: SliceState = {
   open: false,
   cart: [],
   imageData: imageData,
+  product: [],
 };
 //typescript needs the above not to be blank
 
@@ -31,6 +33,10 @@ export const artSlice = createSlice({
   initialState,
   reducers: {
     //PayloadAction<string> action typing for Typescript
+    checkProduct: (state, action: PayloadAction<CartItem>) => {
+      state.product = [];
+      state.product.push(action.payload);
+    },
     setOpen: (state, action: PayloadAction<boolean>) => {
       state.open = action.payload;
     },
@@ -66,7 +72,13 @@ export const artSlice = createSlice({
     },
   },
 });
-export const { setOpen, addCart, removeCart, removeItem, clearCart } =
-  artSlice.actions;
+export const {
+  setOpen,
+  addCart,
+  removeCart,
+  removeItem,
+  clearCart,
+  checkProduct,
+} = artSlice.actions;
 
 export default artSlice.reducer;

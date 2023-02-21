@@ -1,11 +1,11 @@
 import * as BsIcons from "react-icons/bs";
 import * as CgIcons from "react-icons/cg";
-import { addCart, removeItem } from "../state/ArtSlice";
+import { addCart, checkProduct, removeItem } from "../state/ArtSlice";
 import { useAppDispatch } from "../state/Hooks";
 import { Link } from "react-router-dom";
 import { CartItem } from "../state/ArtSlice";
 
-export function ProductContent({
+export function CollectionContent({
   id,
   title,
   src,
@@ -13,7 +13,7 @@ export function ProductContent({
   amount,
 }: CartItem): JSX.Element {
   const dispatch = useAppDispatch();
-
+  console.log(src);
   return (
     <div className="pt-10">
       <div className="border-8 border-[#c3bbb6] h-[250px] w-[250px] mb-4 relative overflow-hidden group transition ">
@@ -49,24 +49,27 @@ export function ProductContent({
               <BsIcons.BsBagDashFill className="text-2xl" />
             </div>
           </button>
-          <Link
-            to={`/collection/${id}`}
-            className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull drop-shadow-xl"
+          <div
+            onClick={(e) =>
+              dispatch(checkProduct({ id, title, src, price, amount }))
+            }
           >
-            <CgIcons.CgEyeAlt />
-          </Link>
+            <Link
+              to={`/collection/${id}`}
+              className="flex justify-center items-center rounded-full text-white w-12 h-12 bg-gull drop-shadow-xl"
+            >
+              <CgIcons.CgEyeAlt />
+            </Link>
+          </div>
         </div>
       </div>
       {/* title and price */}
-      <div>
-        <Link to={`/${id}`}>
-          <div className="capitalize text-everglade mb-1 font-bold ml-1">
-            {title}
-          </div>
-        </Link>
-        <div className="text-sm capitalize text-everglade mb-1 font-bold ml-1">
-          ${price}
-        </div>
+
+      <div className="capitalize text-everglade mb-1 font-bold ml-1">
+        {title}
+      </div>
+      <div className="text-sm capitalize text-everglade mb-1 font-bold ml-1">
+        ${price}
       </div>
     </div>
   );
