@@ -6,7 +6,13 @@ import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import { CartItem } from "../state/ArtSlice";
 
-export const CartContent = ({ id, title, src, price, amount }: CartItem) => {
+export function CartContent({
+  id,
+  title,
+  src,
+  price,
+  amount,
+}: CartItem): JSX.Element {
   const dispatch = useAppDispatch();
 
   return (
@@ -79,4 +85,4 @@ export const CartContent = ({ id, title, src, price, amount }: CartItem) => {
       </div>
     </div>
   );
-};
+}

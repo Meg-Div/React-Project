@@ -6,14 +6,14 @@ import * as AiIcons from "react-icons/ai";
 import { setOpen, clearCart } from "../state/ArtSlice";
 import { CartContent } from "./CartContent";
 
-export const Sidebar = () => {
+export function Sidebar(): JSX.Element {
   const dispatch = useAppDispatch();
 
   const cart = useAppSelector((state) => state.art.cart);
   const open = useAppSelector((state) => state.art.open);
 
   if (!open) {
-    return null;
+    return <div></div>;
   }
   let finalTotal = 0;
   let amountTotal = 0;
@@ -42,7 +42,6 @@ export const Sidebar = () => {
           </button>
         </div>
         <div>
-          cart items
           {cart.map((item) => {
             return <CartContent {...item} />;
           })}
@@ -65,4 +64,4 @@ export const Sidebar = () => {
       </div>
     </>
   );
-};
+}

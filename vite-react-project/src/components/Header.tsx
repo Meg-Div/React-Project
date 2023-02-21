@@ -4,7 +4,7 @@ import * as BsIcons from "react-icons/bs";
 import { useAppDispatch, useAppSelector } from "../state/Hooks";
 import { setOpen } from "../state/ArtSlice";
 
-export const Header = () => {
+export function Header(): JSX.Element {
   const dispatch = useAppDispatch();
 
   const open = useAppSelector((state) => state.art.open);
@@ -37,4 +37,4 @@ export const Header = () => {
       </div>
     </div>
   );
-};
+}

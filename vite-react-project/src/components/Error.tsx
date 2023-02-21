@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function Error() {
+export function Error(): JSX.Element {
   return (
     <div>
       <h1>Oops! You seem to be lost.</h1>

@@ -3,7 +3,7 @@ import React from "react";
 import { useAppSelector, useAppDispatch } from "../state/Hooks";
 import { ProductContent } from "./CollectionContent";
 
-export const SecondHome = () => {
+export function SecondHome(): JSX.Element {
   const imageData = useAppSelector((state) => state.art.imageData);
 
   return (
@@ -19,4 +19,4 @@ export const SecondHome = () => {
       </section>
     </div>
   );
-};
+}

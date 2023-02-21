@@ -5,7 +5,13 @@ import { useAppDispatch } from "../state/Hooks";
 import { Link } from "react-router-dom";
 import { CartItem } from "../state/ArtSlice";
 
-export const ProductContent = ({ id, title, src, price, amount }: CartItem) => {
+export function ProductContent({
+  id,
+  title,
+  src,
+  price,
+  amount,
+}: CartItem): JSX.Element {
   const dispatch = useAppDispatch();
 
   return (
@@ -64,4 +70,4 @@ export const ProductContent = ({ id, title, src, price, amount }: CartItem) => {
       </div>
     </div>
   );
-};
+}
