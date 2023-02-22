@@ -45,12 +45,10 @@ To view the project in full, head to my portfolio: (<a href="https://meg-div.git
 To read the project blog, head to: (<a href="https://dev.to/megdiv/dalle-14ca">Project Blog</a>)
 <br><br>
 
-<center>
-<img width="400" height="auto" src="vite-react-project/public/Collection.png" alt="">
+<img align="center" width="400" height="auto" src="vite-react-project/public/Collection.png" alt="">
 <br>
 <br>
-<img width="400" height="auto" src="vite-react-project/public/Cart.png" alt="">
-</center>
+<img align="center" width="400" height="auto" src="vite-react-project/public/Cart.png" alt="">
 <br>
 <br>
 
