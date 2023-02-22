@@ -1,12 +1,9 @@
 <h1 align="center"> 
-<img width="200" height="auto" src="public/FrontPage.png" alt="">
+<img width="400" height="auto" src="vite-react-project/public/FrontPage.png" alt="">
+
+Dalle is an AI generated e-commerce art website that allows users to add and remove art pieces to and from a cart.
+
 </h1>
-
-<br>
-<p align="center">
-Dalle is an AI generated e-commerce art website that allows users to add and remove art pieces to and from a cart. </p>
-
----
 
 <h2 align="center">Creator:</h2>
 <p align="center">
@@ -24,7 +21,7 @@ Javascript
 * React
 * Redux
 * TypeScript
-* TailwindCss
+* TailwindCSS
 * React Router
 * Canva
 * Jira
@@ -34,15 +31,27 @@ Javascript
 
 ---
 
+<h2 align="center">Palette:</h2>
+<p align="center">
+<img width="200" height="auto" src="vite-react-project/public/Color_Palette.png" alt="">
+</p>
+
+---
+
 <h2 align="center">View:</h2>
 <p align="center">
-To view the project, head to their portfolios: (<a href="https://meg-div.github.io/">Meg's Portfolio</a>)
+To view the project in full, head to my portfolio: (<a href="https://meg-div.github.io/">Meg's Portfolio</a>)
 <br><br>
-To read the project blog, head to: <a href="https://dev.to/megdiv/dalle-14ca"> Project Blog</a>
+To read the project blog, head to: (<a href="https://dev.to/megdiv/dalle-14ca">Project Blog</a>)
 <br><br>
 
-<img width="200" height="auto" src="public/Color_Palette.png" alt="">
-<img width="200" height="auto" src="public/Collection.png" alt="">
-<img width="200" height="auto" src="public/Cart.png" alt="">
+<center>
+<img width="400" height="auto" src="vite-react-project/public/Collection.png" alt="">
+<br>
+<br>
+<img width="400" height="auto" src="vite-react-project/public/Cart.png" alt="">
+</center>
+<br>
+<br>
 
-</p>
+---
