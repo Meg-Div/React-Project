@@ -10,7 +10,7 @@ export function Product(): JSX.Element {
   const title = product[0].title;
   const price = product[0].price;
   const amount = product[0].amount;
-  const src = "../../public/" + product[0].src;
+  const src = product[0].src;
 
   return (
     <>
