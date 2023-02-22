@@ -1,5 +1,5 @@
 <h1 align="center"> 
-<img width="200" height="auto" src="FrontPage.png" alt="">
+<img width="200" height="auto" src="public/FrontPage.png" alt="">
 </h1>
 
 <br>
@@ -41,8 +41,8 @@ To view the project, head to their portfolios: (<a href="https://meg-div.github.
 To read the project blog, head to: <a href="https://dev.to/megdiv/dalle-14ca"> Project Blog</a>
 <br><br>
 
-<img width="200" height="auto" src="Color_Palette.png" alt="">
-<img width="200" height="auto" src="Collection" alt="">
-<img width="200" height="auto" src="Cart" alt="">
+<img width="200" height="auto" src="public/Color_Palette.png" alt="">
+<img width="200" height="auto" src="public/Collection.png" alt="">
+<img width="200" height="auto" src="public/Cart.png" alt="">
 
 </p>
