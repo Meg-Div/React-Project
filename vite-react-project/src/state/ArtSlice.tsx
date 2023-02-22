@@ -26,7 +26,6 @@ const initialState: SliceState = {
   imageData: imageData,
   product: [],
 };
-//typescript needs the above not to be blank
 
 export const artSlice = createSlice({
   name: "art",

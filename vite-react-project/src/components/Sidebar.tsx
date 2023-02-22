@@ -31,7 +31,7 @@ export function Sidebar(): JSX.Element {
   lg:px-[35px]"
       >
         <div className=" flex items-center justify-between py-6 border-b">
-          <div className="text-md font-semibold ">CART {amountTotal}</div>
+          <div className="text-md font-semibold ">CART ({amountTotal})</div>
 
           {/* close button*/}
           <button
