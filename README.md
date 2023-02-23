@@ -1,7 +1,7 @@
 <h1 align="center"> 
 <img width="400" height="auto" src="vite-react-project/public/FrontPage.png" alt="">
 
-Dalle is an AI generated e-commerce art website that allows users to add and remove art pieces to and from a cart.
+Dalle is an e-commerce AI generated art website that allows users to add and remove art pieces to and from a cart.
 
 </h1>
 
