@@ -23,6 +23,7 @@ Javascript
 * TypeScript
 * TailwindCSS
 * React Router
+* DALL·E 2
 * Canva
 * Jira
 * Figma
