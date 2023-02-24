@@ -41,9 +41,11 @@ Javascript
 
 <h2 align="center">View:</h2>
 <p align="center">
-To view the project in full, head to my portfolio: (<a href="https://meg-div.github.io/">Meg's Portfolio</a>)
+To view the project in full: (<a href="https://youtu.be/6qb6IrObv-Q">Video Walkthrough</a>)
 <br><br>
-To read the project blog, head to: (<a href="https://dev.to/megdiv/dalle-14ca">Project Blog</a>)
+To test the project out: (<a href="https://63f6c8993b9f8f00088fa524--wonderful-moonbeam-71d581.netlify.app/">Hosted Version</a>)
+<br><br>
+To read the project blog: (<a href="https://dev.to/megdiv/dalle-14ca">Project Blog</a>)
 <br><br>
 
 <img align="center" width="400" height="auto" src="vite-react-project/public/Collection.png" alt="">
